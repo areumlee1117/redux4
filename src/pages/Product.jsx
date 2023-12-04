@@ -60,7 +60,8 @@ export default function Product() {
             </select>
             <h3>구매옵션 : {selected}</h3>
             {/* 여기에 추가하기 */}
-            <div>
+            {/* 개수 추가하기 */}
+            <div style={{ display: selected === "" ? "none" : "block" }}>
               <span>개수 : {quantity}</span> &nbsp;
               <button
                 onClick={() => {
@@ -69,6 +70,8 @@ export default function Product() {
               >
                 +
               </button>
+              {/* 총 금액 추가하기 */}
+              <div>총 금액 : {quantity * product.price}</div>
             </div>
             <button
               onClick={() => {
